@@ -23,6 +23,7 @@ RUN \
     shadow \
     pcre \
     pcre-dev \
+    inotify-tools \
     zlib \
     zlib-dev && \
   mkdir -p /tmp/nginx && \
