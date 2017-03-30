@@ -1,7 +1,7 @@
 # Nginx docker container arm version. (Raspberry Pi)
 [![GitHub Open Issues](https://img.shields.io/github/issues/pozgo/docker-pi-nginx.svg)](https://github.com/pozgo/docker-pi-nginx/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/pozgo/docker-pi-nginx.svg)](https://github.com/pozgo/docker-pi-nginx)
-[![GitHub Forks](https://img.shields.io/github/forks/pozgo/ddocker-pi-nginx.svg)](https://github.com/pozgo/docker-pi-nginx)  
+[![GitHub Forks](https://img.shields.io/github/forks/pozgo/docker-pi-nginx.svg)](https://github.com/pozgo/docker-pi-nginx)  
 [![Stars on Docker Hub](https://img.shields.io/docker/stars/polinux/pi-nginx.svg)](https://hub.docker.com/r/polinux/pi-nginx)
 [![Pulls on Docker Hub](https://img.shields.io/docker/pulls/polinux/pi-nginx.svg)](https://hub.docker.com/r/polinux/pi-nginx)  
 [![](https://images.microbadger.com/badges/image/polinux/pi-nginx.svg)](http://microbadger.com/images/polinux/pi-nginx)
