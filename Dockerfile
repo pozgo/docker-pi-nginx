@@ -14,8 +14,6 @@ RUN \
     binutils \
     binutils-doc \
     gcc-doc \
-    libaio \
-    libaio-dev \
     wget \
     unzip \
     openssl \
@@ -46,17 +44,27 @@ RUN \
     --with-pcre \
     --with-http_realip_module \
     --with-http_v2_module \
-    --with-ipv6 \
     --with-debug && \
   make && make install && \
-  rm -rf /tmp/nginx && rm -rf /tmp/nginx-auth-ldap-master/ && \
+  rm -rf /tmp/nginx && \
   addgroup -g 101 www && \
   adduser -u 101 -G www -h /data/www -s /bin/bash www -D  && \
-  # adduser -D -h /data/www -u 180 www www && \
   rm -rf /etc/nginx/*.d /etc/nginx/*_params && \
   mkdir -p /etc/nginx/ssl && \
   openssl genrsa -out /etc/nginx/ssl/dummy.key 2048 && \
   openssl req -new -key /etc/nginx/ssl/dummy.key -out /etc/nginx/ssl/dummy.csr -subj "/C=GB/L=London/O=Company Ltd/CN=docker" && \
-  openssl x509 -req -days 3650 -in /etc/nginx/ssl/dummy.csr -signkey /etc/nginx/ssl/dummy.key -out /etc/nginx/ssl/dummy.crt  
+  openssl x509 -req -days 3650 -in /etc/nginx/ssl/dummy.csr -signkey /etc/nginx/ssl/dummy.key -out /etc/nginx/ssl/dummy.crt && \
+  apk del \
+    abuild \
+    binutils \
+    binutils-doc \
+    gcc-doc \
+    unzip \
+    openssl-dev \
+    pcre-dev \
+    zlib-dev && \
+  rm -rf /var/cache/apk/*
 
 COPY container-files /
+
+EXPOSE 80 81 443
